@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+
+// Now we define the colors the construct the theme, we need to select 3 colors:
+// The primary color pallete, the accent color pallete, and the warn color pallete
+$primary-plt: mat-palette($mat-blue);
+$accent-plt: mat-palette($mat-orange);
+$warn-plt: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary-plt, $accent-plt, $warn-plt);
+
+
+// we will also create some global variables that may be used when we want to 
+// use specific colors in our own components
+$background-plt: map-get($theme, background);
+$foreground-plt: map-get($theme, foreground);
+
+$primary-color: mat-color($primary-plt);
+$accent-color: mat-color($accent-plt);
+$warn-color: mat-color($warn-plt);
+
+@debug $theme;

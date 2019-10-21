@@ -1,0 +1,30 @@
+@import './src/common.scss';
+
+.root {
+    background: mat-color($primary-plt, 900);
+    color: mat-contrast($primary-plt, 900);
+}
+
+.root h1 {
+    background-color: mat-color($primary-plt, 100);
+    color: mat-color($primary-plt, 800);
+}
+
+.square {
+    height: 100px;
+    width: 100px;   
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.bg-primary {
+    background-color: mat-color($primary-plt);
+}
+.bg-darker {
+    background-color: mat-color($primary-plt, darker);
+}
+.bg-lighter {
+    background-color: mat-color($primary-plt, lighter);
+}
