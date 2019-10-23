@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import './common';
+@include mat-core();
+
+@include angular-material-theme($theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$p-keys: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+$a-keys: (100:A100, 200:A200, 400:A400, 700:A700);
+
+:root {
+    @each $key in $p-keys {
+        --p#{$key}: #{map-get($plt-primary, $key)};
+    }
+    @each $key, $value in $a-keys {
+        --a#{$key}: #{map-get($plt-accent, $value)};
+    }
+
+    --primary: #{map-get($plt-primary, default)};
+    --pdarker: #{map-get($plt-primary, darker)};
+    --plighter: #{map-get($plt-primary, lighter)};
+    --accent: #{map-get($plt-accent, default)};
+    --warn: #{map-get($plt-warn, default)};
+}
